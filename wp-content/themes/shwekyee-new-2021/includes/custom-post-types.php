@@ -25,20 +25,20 @@ function create_post_type(){
 		)
 	);
 
-	// register_post_type('csr',
-	// 	array(
-	// 		'labels' => array(
-	// 			'name' => __('CSR'),
-	// 			'singular_name' => __('CSR')
-	// 		),
-	// 		'public' => true,
-	// 		'has_archive' => true,
-	// 		'show_in_rest'=> true,
-	// 		// 'menu_icon' =>'',
-	// 		'rewrite' => array('slug' => 'csr'),
-	// 		'supports' => array('title', 'editor', 'custom-fields', 'excerpt', 'thumbnail')
-	// 	)
-	// );
+	register_post_type('testimonials',
+		array(
+			'labels' => array(
+				'name' => __('Testimonials'),
+				'singular_name' => __('Testimonial')
+			),
+			'public' => true,
+			'has_archive' => true,
+			'show_in_rest'=> true,
+			// 'menu_icon' =>'',
+			'rewrite' => array('slug' => 'testimonial'),
+			'supports' => array('title', 'editor', 'custom-fields', 'excerpt', 'thumbnail')
+		)
+	);
 }
 function create_tax(){
     register_taxonomy('product-type', 'product', array(
