@@ -27,6 +27,10 @@
 	background: @color-graypink;
 }
 
+.bg-gray {
+	background: #f0f0f0;
+}
+
 .pd80 {
 	padding: 80px 0;
 }
@@ -142,6 +146,7 @@ h4,
 h5,
 h6 {
 	font-family: @head-font, @font-mm;
+	line-height: 1.5;
 }
 
 li,
@@ -153,6 +158,7 @@ div {
 	font-size: 16px;
 	color: @color-black-deep;
 	font-weight: 400;
+	line-height: 1.5;
 }
 
 .btn-space {
@@ -177,7 +183,7 @@ div {
 	border-radius: 30px;
 	transition: 0.3s;
 	color: @color-white;
-	border: 1px solid @color-secondary;
+	border: 1px solid transparent;
 	transition: 0.2s 0.1s;
 	width: auto;
 	span {
@@ -191,6 +197,7 @@ div {
 		span {
 			color: @color-green;
 		}
+		border: 1px solid @color-secondary;
 	}
 	&:before {
 		content: '';
@@ -349,16 +356,52 @@ div {
 	align-items: center;
 }
 
+.inner-banner {
+	padding: 185px 0;
+}
+
+.breadcrumb {
+	background: transparent;
+	margin-top: 50px;
+	.breadcrumb-box {
+		background: #e392362e;
+		display: inline-block;
+		border-radius: 10px;
+		padding: 20px;
+	}
+	h1 {
+		font-size: 50px;
+		color: @color-white;
+		font-weight: 700;
+	}
+	p {
+		font-size: 20px;
+		color: @color-white;
+	}
+}
+
 /*
 Home Page
 */
 
 .home-slide {
+	a {
+		border: 1px solid transparent!important;
+		.transition();
+		&:hover {
+			background: transparent!important;
+			border: 1px solid @color-secondary!important;
+			span {
+				color: @color-green!important;
+			}
+		}
+	}
 	span.product-btn {
 		text-transform: uppercase;
 		color: @color-white;
 		font-weight: 700;
 		font-size: 14px;
+		letter-spacing: 1px;
 	}
 }
 
@@ -512,18 +555,21 @@ header {
 				left: 15px;
 				bottom: -25px;
 				background: @color-green;
-				width: 60px;
-				height: 60px;
+				width: 55px;
+				height: 55px;
 				border-radius: 100%;
 				text-align: center;
-				div {
+				padding: 10px 0;
+				span {
+					display: block;
 					color: @color-white;
+					line-height: 20px;
 				}
-				div.day {
+				span.day {
 					font-size: 24px;
 					font-weight: 700;
 				}
-				div.month {
+				span.month {
 					font-size: 12px;
 				}
 			}
@@ -617,6 +663,60 @@ header {
 		color: @color-white;
 	}
 }
+/* end home page */
+
+/* About Page */
+
+.ab-box {
+	margin-bottom: 30px;
+	ul {
+		li {
+			list-style-type: decimal;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+/* End About Page */
+
+/* Blog Page */
+
+.blog-detail {
+	background: @color-white;
+	padding: 20px;
+	.img-date {
+		position: relative;
+		margin: 0 auto;
+		.b-date {
+			position: absolute;
+			left: 15px;
+			bottom: -25px;
+			background: @color-green;
+			width: 55px;
+			height: 55px;
+			border-radius: 100%;
+			text-align: center;
+			padding: 10px 0;
+			span {
+				display: block;
+				color: @color-white;
+				line-height: 20px;
+			}
+			span.day {
+				font-size: 24px;
+				font-weight: 700;
+			}
+			span.month {
+				font-size: 12px;
+			}
+		}
+	}
+	.blog-content {
+		padding-top: 50px;
+	}
+}
+
+/* end blog page */
 
 footer {
 	background: @color-primary;
@@ -657,50 +757,6 @@ footer {
 
 /*
 |-------------------------------------------------------------------------------------------------------------------------------
-| Media Query (Min)
-|-------------------------------------------------------------------------------------------------------------------------------
-| Small devices (landscape phones, 576px and up), 
-| Medium devices (tablets, 768px and up), 
-| Large devices (desktops, 992px and up), 
-| Extra large devices (large desktops, 1200px and up), 
-| and other standard screen sizes (414px, 375px and 320px and up - Note: get from browser)
-|-------------------------------------------------------------------------------------------------------------------------------
-|
-*/
-// Small devices (landscape phones, 320px and up)
-@media (min-width: 320px) {
-}
-
-// Small devices (landscape phones, 375px and up)
-@media (min-width: 375px) {
-}
-
-// Small devices (landscape phones, 414px and up)
-@media (min-width: 414px) {
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-}
-
-// Large devices (normal laptop)
-@media (min-width: 1368px) { 
-}
-
-/*
-|-------------------------------------------------------------------------------------------------------------------------------
 | Media Query (Max)
 |-------------------------------------------------------------------------------------------------------------------------------
 | Large devices (desktops, less than 1200px), 
@@ -717,18 +773,114 @@ footer {
 
 // Large devices (desktops, less than 1200px)
 @media (max-width: 1199.98px) { 
+	header {
+		.stellarnav {
+			ul {
+				li {
+					a {
+						padding: 20px 13px;
+					}
+				}
+			}
+		}
+	}
+	.hm-service {
+		.service-box {
+			margin-bottom: 2rem;
+			h3 {
+				margin-top: 20px;
+			}
+		}
+	}
+	.inner-title {
+		font-size: 21px;
+	}
+	.premium-product {
+		.card {
+			min-height: 0;
+		}
+	}
 }
 
 // Medium devices (tablets, less than 991.98px)
 @media (max-width: 991.98px) { 
+	header {
+		.top-bar {
+			ul {
+				text-align: left;
+			}
+		}
+		.stellarnav {
+			.menu-toggle {
+				position: absolute;
+				right: 0;
+				top: 0px;
+				span.bars {
+					span {
+						background: @color-white;
+						width: 23px;
+						margin: 0 0 4px;
+					}
+				}
+			}
+		}
+	}
+	.home-slide {
+		h1 {
+			font-size: 50px!important;
+		}
+	}
 }
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) { 
+	header {
+		.top-bar {
+			ul {
+				li.hotline {
+					display: none;
+				}
+			}
+		}
+	}
+	.best-seller, .premium-product, .latest-blog, .testimonial {
+		.seller-next, .product-next, .blog-next, .client-next {
+			right: 0;
+		}
+		.seller-prev, .product-prev, .blog-prev, .client-prev {
+			left: 0;
+		}
+	}
+	.latest-blog {
+		h4 {
+			min-height: 0;
+		}
+	}
+	.pp-title {
+		font-size: 23px;
+	}
 }
 
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
+	header {
+		.top-bar {
+			ul {
+				li.open-hour {
+					display: none;
+				}
+			}
+		}
+	}
+	.home-slide {
+		h1 {
+			font-size: 30px!important;
+			margin-bottom: 20px!important;
+		}
+		p {
+			font-size: 14px!important;
+		}
+	}
 }
 
 // Extra small devices (portrait phones, less than 414px)

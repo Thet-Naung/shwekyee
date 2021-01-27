@@ -10,6 +10,14 @@ require_once('includes/custom-post-types.php');
 //require_once('includes/custom-blocks.php');
 //require_once('includes/wp-bootstrap-navwalker.php');
 
+
+//define post
+define('SK_PT_TESTIMONIAL', 'testimonial');
+
+
+//define page
+define('SK_HOME_PAGE', 11);
+
 /*
 |-------------------------------------------------------------------------------------------------------------------------------
 | CSS merge and minify process

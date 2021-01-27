@@ -24,9 +24,32 @@ $(document).ready(function() {
 		slidesPerColumnFill: 'row',
 		direction: 'horizontal',
 		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+			nextEl: '.seller-next',
+			prevEl: '.seller-prev',
 		},
+		breakpoints: {
+        	1199: {
+				slidesPerView: 4,
+				slidesPerGroup: 4,
+                spaceBetween: 20
+            },
+            991: {
+				slidesPerView: 3,
+				slidesPerGroup: 3,
+                spaceBetween: 30
+            },
+        	575: {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+                spaceBetween: 50
+			},
+			200: {
+				slidesPerView: 1,
+				slidesPerColumn: 1,
+				slidesPerGroup: 1,
+                spaceBetween: 20
+			}
+        }
 	});
 
 	var product = new Swiper('.product-slide', {
@@ -34,9 +57,26 @@ $(document).ready(function() {
 		slidesPerGroup: 3,
 		spaceBetween: 20,
 		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+			nextEl: '.product-next',
+			prevEl: '.product-prev',
 		},
+		breakpoints: {
+            991: {
+				slidesPerView: 3,
+				slidesPerGroup: 3,
+                spaceBetween: 30
+            },
+            767: {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+                spaceBetween: 30
+            },
+			200: {
+				slidesPerView: 1,
+				slidesPerGroup: 1,
+                spaceBetween: 30
+            }
+        }
 	});
 
 	var blog = new Swiper('.blog-slide', {
@@ -44,19 +84,49 @@ $(document).ready(function() {
 		slidesPerGroup: 3,
 		spaceBetween: 20,
 		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+			nextEl: '.blog-next',
+			prevEl: '.blog-prev',
 		},
+		breakpoints: {
+			991: {
+				slidesPerView: 3,
+				slidesPerGroup: 3,
+                spaceBetween: 30
+            },
+            767: {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+                spaceBetween: 30
+            },
+			200: {
+				slidesPerView: 1,
+				slidesPerGroup: 1,
+                spaceBetween: 30
+            }
+        }
 	});
 
 	var client = new Swiper('.client-slide', {
-		slidesPerView: 2,
+		slidesPerView: 2,	
+		slidesPerColumn: 1,
 		slidesPerGroup: 2,
 		spaceBetween: 20,
 		navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
+			nextEl: '.client-next',
+			prevEl: '.client-prev',
 		},
+		breakpoints: {
+			991: {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+                spaceBetween: 30
+            },
+			200: {
+				slidesPerView: 1,
+				slidesPerGroup: 1,
+                spaceBetween: 30
+            }
+        }
 	});
 
 	// AOS Animate

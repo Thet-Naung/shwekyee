@@ -32,21 +32,21 @@ if ($site_info['logo']) {
 <header>
     <div class="container">
         <div class="row">
-            <div class="col-md-2"> 
+            <div class="col-sm-2 col-4"> 
                 <?php if ($logo) { ?>
                     <a href="<?php echo WP_HOME; ?>" title="<?php bloginfo('name'); ?>" class="logo-name">
                         <img src="<?php echo WP_HOME.$logo; ?>" class="img-fluid main-logo" alt="<?php bloginfo('name'); ?>">
                     </a>
                 <?php } ?>
             </div>
-            <div class="col-md-10">
+            <div class="col-sm-10 col-8">
                 <div class="menu-bar">
                     <div class="top-bar">
                         <ul>
                             <li class="open-hour">
                                 <span>Hours: Open:</span><span class="badge badge-default"><?php echo $site_info['open_hour']; ?></span>
                             </li>
-                            <li>
+                            <li class="hotline">
                                 <span>Hot Line: <?php echo $site_info['hotline_number']; ?></span>
                             </li>
                         </ul>
@@ -68,8 +68,10 @@ if ($site_info['logo']) {
         </div>
     </div>
 </header>
-<div class="home-slide">
-    <?php
-        echo do_shortcode('[smartslider3 slider="2"]');
-    ?>
-</div>
+<?php if (is_front_page()) { ?>
+    <div class="home-slide">
+        <?php
+            echo do_shortcode('[smartslider3 slider="2"]');
+        ?>
+    </div>   
+<?php } ?>
