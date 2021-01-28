@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<?php get_template_part('partials/inner-banner'); ?>
     <main>
         <div class="container">
             <div class="row">

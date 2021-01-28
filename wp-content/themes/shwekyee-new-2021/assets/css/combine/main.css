@@ -20,6 +20,13 @@
 .text-green {
   color: #759843;
 }
+a {
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
 a img.aligncenter {
   display: block;
   margin-left: auto;
@@ -38,6 +45,7 @@ a img.alignleft {
 }
 a:hover {
   text-decoration: none;
+  color: #e39236;
 }
 .wp-caption {
   background: #fff;
@@ -208,11 +216,27 @@ div {
   font-weight: 400;
   color: #000;
   font-family: 'Open Sans', sans-serif, pyidaungsu;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.slide-title:hover {
+  color: #e39236;
 }
 .pp-title {
   font-size: 26px;
   font-weight: 700;
   color: #fff;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.pp-title:hover {
+  color: #e39236;
 }
 .star-rating {
   height: 12px;
@@ -438,8 +462,25 @@ header .stellarnav ul li.current_page_item a:after {
   padding: 1rem;
 }
 .latest-blog {
-  background: url(/wp-content/uploads/2021/01/blog-bg.png) no-repeat;
-  background-position: top center;
+  position: relative;
+}
+.latest-blog:after,
+.latest-blog:before {
+  content: '';
+  position: absolute;
+  top: 100px;
+}
+.latest-blog:before {
+  background: url(/wp-content/uploads/2021/01/j-donut.jpg) no-repeat;
+  width: 181px;
+  height: 290px;
+  left: 0;
+}
+.latest-blog:after {
+  background: url(/wp-content/uploads/2021/01/cake-bg.jpg) no-repeat;
+  width: 234px;
+  height: 264px;
+  right: 0;
 }
 .latest-blog .blog-box {
   position: relative;
@@ -550,6 +591,10 @@ header .stellarnav ul li.current_page_item a:after {
   padding: 3px 50px;
   font-size: 14px;
 }
+.follow-facebook a.btn-fb:hover {
+  background: #759843;
+  color: #fff;
+}
 .youtube-section {
   background: url(/wp-content/uploads/2021/01/youtube-banner.png) no-repeat;
   background-size: cover;
@@ -560,6 +605,9 @@ header .stellarnav ul li.current_page_item a:after {
   color: #fff;
   text-decoration: underline;
   font-size: 22px;
+}
+.youtube-section a:hover {
+  color: #759843;
 }
 .youtube-section .y-title {
   font-size: 70px;
@@ -607,6 +655,24 @@ header .stellarnav ul li.current_page_item a:after {
 .blog-detail .blog-content {
   padding-top: 50px;
 }
+.blog-detail .blog-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.blog-detail .blog-content ul li {
+  position: relative;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+.blog-detail .blog-content ul li:before {
+  content: '';
+  background: url(/wp-content/uploads/2021/01/taste-icon.png);
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: -30px;
+  top: 2px;
+}
 footer {
   background: #da3834;
   padding-top: 1.6rem;
@@ -649,6 +715,164 @@ footer .copyright-container a:hover {
 footer .copyright-container .service-owner-logo {
   width: 46px;
   margin-left: 7px;
+}
+.csr-content {
+  padding-top: 50px;
+}
+.csr-content ul li {
+  list-style-type: square;
+}
+.csr .csr-image-box {
+  position: relative;
+  margin-bottom: 30px;
+}
+.csr .csr-image-box .img-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2525256b;
+  opacity: 0;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.csr .csr-image-box .img-overlay i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  font-size: 20px;
+}
+.csr .csr-image-box:hover .img-overlay {
+  opacity: 1;
+}
+#site-map {
+  height: 500px;
+  border: 1px solid #ddd;
+  margin-top: 50px;
+}
+.contact-info {
+  background: #fff;
+  padding: 50px;
+}
+.contact-info h2 {
+  font-weight: 700;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+.contact-info .media {
+  margin-bottom: 30px;
+}
+.contact-info .media i {
+  font-size: 30px;
+  color: #759843;
+}
+.contact-info .media-body {
+  margin-left: 30px;
+}
+.sidebar .latest-post {
+  background: #fff;
+  padding: 20px;
+}
+.sidebar .latest-post h3 {
+  position: relative;
+  padding-bottom: 5px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 22px;
+}
+.sidebar .latest-post h3:after {
+  content: '';
+  position: absolute;
+  background: #e39236;
+  width: 45px;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+}
+.sidebar .latest-post ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+.sidebar .latest-post ul li {
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+.sidebar .latest-post ul li .s-image-box {
+  position: relative;
+}
+.sidebar .latest-post ul li .s-image-box .s-image-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  opacity: 0;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.sidebar .latest-post ul li .s-image-box:hover .s-image-overlay {
+  opacity: 0.3;
+}
+.sidebar .latest-post ul li .media-body {
+  margin-left: 15px;
+}
+.sidebar .latest-post ul li .media-body span {
+  font-family: 'Cormorant', serif;
+  color: #759843;
+  font-weight: 700;
+}
+.sidebar .latest-post ul li .media-body p {
+  margin-top: 10px;
+}
+.sidebar .latest-post ul li .media-body p:hover a {
+  color: #e39236;
+}
+.sidebar .latest-post ul li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border: 0;
+}
+.default-pg form {
+  background: #fff;
+  -webkit-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+.default-pg form input,
+.default-pg form textarea {
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+}
+.default-pg form textarea {
+  height: 100px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.default-pg form label {
+  color: #759843;
+  margin-top: 20px;
+}
+.default-pg form input[type="file"] {
+  margin-bottom: 20px;
+  width: auto;
 }
 @media (max-width: 1199.98px) {
   header .stellarnav ul li a {

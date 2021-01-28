@@ -27,7 +27,7 @@ get_header();
                         $day = get_the_date('d', $id);
                         $month = get_the_date('M', $id);
                     ?>
-                        <div class="col-lg-4 col-md-6 col-12">
+                        <div class="col-lg-4 col-md-6 col-12 mb-4">
                             <a href="<?php echo $b_link; ?>" title="<?php echo $b_title; ?>">
                                 <div class="card">
                                     <div class="img-date">

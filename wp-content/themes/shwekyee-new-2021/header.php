@@ -19,6 +19,8 @@
 <![endif]-->
 <?php wp_head(); ?>
 </head>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/my_MM/sdk.js#xfbml=1&version=v9.0" nonce="igy0HVWn"></script>
 <?php $body_classes = join( ' ', get_body_class() ); ?>
 <body class="<?php if( !is_search() )echo $body_classes; ?>">
 <?php 

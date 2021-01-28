@@ -39,11 +39,35 @@ function create_post_type(){
 			'supports' => array('title', 'editor', 'custom-fields', 'excerpt', 'thumbnail')
 		)
 	);
+
+	register_post_type('activity',
+		array(
+			'labels' => array(
+				'name' => __('Activities'),
+				'singular_name' => __('Acitvity')
+			),
+			'taxonomies'  => array( 'activity-type' ),
+			'public' => true,
+			'has_archive' => true,
+			'show_in_rest'=> true,
+			// 'menu_icon' =>'',
+			'rewrite' => array('slug' => 'activity'),
+			'supports' => array('title', 'editor', 'custom-fields', 'excerpt', 'thumbnail')
+		)
+	);
 }
 function create_tax(){
+
     register_taxonomy('product-type', 'product', array(
 		'label' =>__('Product Types'),
         'rewrite'      => array('slug' => 'product-type'),
+		'hierarchical' => true,
+		'show_in_rest'=> true,
+	));
+
+	register_taxonomy('activity-type', 'activity', array(
+		'label' =>__('Activity Types'),
+        'rewrite'      => array('slug' => 'activity-type'),
 		'hierarchical' => true,
 		'show_in_rest'=> true,
 	));

@@ -15,6 +15,9 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <div class="blog-detail">
+                                    <div class="social-share d-flex justify-content-start mb-3">
+                                        <!-- <div class="fb-share-button" data-href="https://www.facebook.com/shwekyeemyanmar/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fshwekyeemyanmar%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">မျှဝေမယ်</a></div> -->
+                                    </div>
                                     <div class="img-date">
                                         <img src="<?php echo $blog_image; ?>" alt="<?php echo $blog_title; ?>" class="w-100"> 
                                         <div class="b-date">
@@ -24,7 +27,7 @@
                                         </div>
                                     </div>
                                 <div class="blog-content">
-                                        <?php echo apply_filters('the_content', $blog_content); ?>
+                                    <?php echo apply_filters('the_content', $blog_content); ?>
                                 </div>
                                 </div>
                             </div>
