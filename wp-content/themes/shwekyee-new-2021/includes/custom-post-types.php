@@ -15,7 +15,7 @@ function create_post_type(){
 				'name' => __('Products'),
 				'singular_name' => __('Product')
 			),
-			'taxonomies'  => array( 'product-type' ),
+			'taxonomies'  => array( 'product-type', 'product-category' ),
 			'public' => true,
 			'has_archive' => true,
 			'show_in_rest'=> true,
@@ -61,6 +61,13 @@ function create_tax(){
     register_taxonomy('product-type', 'product', array(
 		'label' =>__('Product Types'),
         'rewrite'      => array('slug' => 'product-type'),
+		'hierarchical' => true,
+		'show_in_rest'=> true,
+	));
+
+	register_taxonomy('product-category', 'product', array(
+		'label' =>__('Product Category'),
+        'rewrite'      => array('slug' => 'product-category'),
 		'hierarchical' => true,
 		'show_in_rest'=> true,
 	));

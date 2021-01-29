@@ -129,6 +129,34 @@ $(document).ready(function() {
         }
 	});
 
+	var galleryThumbs = new Swiper('.gallery-thumbs', {
+		spaceBetween: 10,
+		slidesPerView: 4,
+		freeMode: true,
+		watchSlidesVisibility: true,
+		watchSlidesProgress: true,
+	  });
+	var galleryTop = new Swiper('.gallery-top', {
+		spaceBetween: 10,
+		navigation: {
+			nextEl: '.gallery-next',
+			prevEl: '.gallery-prev',
+		},
+		thumbs: {
+			swiper: galleryThumbs
+		}
+	});
+
+	var pslide = new Swiper('.product-slide', {
+		slidesPerView: 4,
+		spaceBetween: 30,
+		navigation: {
+			nextEl: '.p-next',
+			prevEl: '.p-prev',
+		},
+	});
+
+
 	$('[data-fancybox="gallery"]').fancybox({
 		buttons: [
 			"slideShow",

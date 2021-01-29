@@ -284,7 +284,6 @@ div {
 }
 .swiper-container {
   width: 100%;
-  height: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -765,7 +764,6 @@ footer .copyright-container .service-owner-logo {
 .contact-info h2 {
   font-weight: 700;
   margin-bottom: 30px;
-  font-size: 25px;
 }
 .contact-info .media {
   margin-bottom: 30px;
@@ -848,31 +846,106 @@ footer .copyright-container .service-owner-logo {
   padding-bottom: 0;
   border: 0;
 }
-.default-pg form {
+.career-pg form {
   background: #fff;
   -webkit-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.1);
   -moz-box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.1);
   box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.1);
   padding: 30px;
 }
-.default-pg form input,
-.default-pg form textarea {
+.career-pg form input,
+.career-pg form textarea {
   width: 100%;
-  padding: 5px 10px;
+  padding: 10px 10px;
   border: 1px solid #ccc;
+  font-size: 14px;
 }
-.default-pg form textarea {
+.career-pg form textarea {
   height: 100px;
   margin-top: 20px;
   margin-bottom: 15px;
 }
-.default-pg form label {
+.career-pg form span.color-red {
+  color: #ff0000;
+}
+.career-pg form label {
   color: #759843;
+  font-size: 16px;
+}
+.career-pg form .btn.hover-filled-slide-up:before {
+  border-radius: 50px;
+}
+.career-pg form button {
+  padding: 0;
+  width: 100%;
+  margin: 0;
+  border-radius: 50px;
+}
+.career-pg form button input[type="submit"] {
+  padding: 0;
+  position: relative;
+  background: transparent;
+  border: 0;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #fff;
+}
+.career-pg form button input[type="submit"]:focus {
+  outline: none;
+}
+.career-pg form button:focus {
+  outline: none;
+  box-shadow: none;
+}
+.career-pg form button:hover input[type="submit"] {
+  color: #759843;
+}
+.product-detail .p-detail-content {
   margin-top: 20px;
 }
-.default-pg form input[type="file"] {
-  margin-bottom: 20px;
-  width: auto;
+.product-detail .product-fact {
+  border-left: 1px solid #ececee;
+  padding: 30px;
+}
+.product-detail .product-fact .facts {
+  padding: 50px 0;
+  border-bottom: 1px solid #ececee;
+}
+.product-detail .product-fact .facts:first-child {
+  padding-top: 0;
+}
+.product-detail .product-fact .facts:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.product-detail .product-fact .facts h2 {
+  font-style: italic;
+  color: #e39236;
+}
+.product-detail .product-fact .facts p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+.product-detail .related-product {
+  position: relative;
+  margin-top: 80px;
+}
+.product-detail .related-product .product-slide-box {
+  position: relative;
+}
+.product-detail .related-product .p-next,
+.product-detail .related-product .p-prev {
+  color: #73848e;
+  top: 0;
+}
+.product-detail .related-product .p-next {
+  right: 0;
+}
+.product-detail .related-product .p-prev {
+  left: auto;
+  right: 50px;
 }
 @media (max-width: 1199.98px) {
   header .stellarnav ul li a {
@@ -907,6 +980,9 @@ footer .copyright-container .service-owner-logo {
   }
   .home-slide h1 {
     font-size: 50px !important;
+  }
+  .youtube-section .y-title {
+    font-size: 60px;
   }
 }
 @media (max-width: 767.98px) {
@@ -952,8 +1028,15 @@ footer .copyright-container .service-owner-logo {
   .latest-blog h4 {
     min-height: 0;
   }
+  .latest-blog:after {
+    bottom: 0;
+    top: auto;
+  }
   .pp-title {
     font-size: 23px;
+  }
+  .youtube-section .y-title {
+    font-size: 50px;
   }
 }
 @media (max-width: 575.98px) {
@@ -966,5 +1049,20 @@ footer .copyright-container .service-owner-logo {
   }
   .home-slide p {
     font-size: 14px !important;
+  }
+}
+@media (max-width: 413.98px) {
+  .primary-heading,
+  .secondary-heading {
+    font-size: 35px;
+  }
+  .youtube-section .y-title {
+    font-size: 35px;
+  }
+  .youtube-section img {
+    width: 50px;
+  }
+  .youtube-section a {
+    font-size: 18px;
   }
 }
