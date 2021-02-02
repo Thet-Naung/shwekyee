@@ -20,12 +20,9 @@ $page_banner = get_field('banner', $obj->ID);
                 }
                 ?>
             </h1>
-            <?php 
-                if ( is_page() ) {
-                    echo apply_filters( 'the_content', $general['banner_text']); 
-                }
-                else {
-                    
+            <?php
+                if ( function_exists('yoast_breadcrumb') ) {
+                yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
                 }
             ?>
         </div>

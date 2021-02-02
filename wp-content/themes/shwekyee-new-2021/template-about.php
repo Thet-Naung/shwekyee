@@ -21,45 +21,57 @@ $c_content = $certificate['content'];
 <?php get_template_part('partials/inner-banner'); ?>
 
 <main class="main-page">
-    <section class="ab-history bg-gray-pink pd60">
+    <section class="ab-history pd60">
         <div class="container">
             <div class="history">
                 <?php if ($history) { ?>
+                    <h1 class="primary-heading"><?php echo $h_title; ?></h1>
+                    <div class="ab-detail">
                     <div class="row">
-                        <div class="col-12">
-                            <h1 class="primary-heading"><?php echo $h_title; ?></h1>
+                        <div class="col-md-6">
+                            <div class="about-img-box">
+                                <img src="<?php echo $ab_img; ?>" alt="Shwekyee About Image" class="w-100">
+                            </div>
                         </div>
                         <div class="col-md-6">
-                            <img src="<?php echo $ab_img; ?>" alt="Shwekyee About Image" class="img-fluid">
+                            <div class="ab-content">
+                                <?php echo apply_filters('the_content', $h_content); ?>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <?php echo apply_filters('the_content', $h_content); ?>
-                        </div>
+                        <div style="clear:both;"></div>
                     </div>
                 <?php } ?>
             </div>
         </div>
     </section>
-    <section class="ab-goal pd60">
-        <div class="container">
-            <?php if ($mission) { ?>
-                <div class="ab-box">
-                    <h3><?php echo $m_title; ?></h3>
-                    <?php echo apply_filters('the_content', $m_content); ?>
+    <section class="ab-goal hm-service pd60">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-4">
+                    <?php if ($mission) { ?>
+                        <div class="ab-box">
+                            <h3><?php echo $m_title; ?></h3>
+                            <?php echo apply_filters('the_content', $m_content); ?>
+                        </div>
+                    <?php } ?>
                 </div>
-            <?php } ?>
-            <?php if ($vision) { ?>
-                <div class="ab-box">
-                    <h3><?php echo $v_title; ?></h3>
-                    <?php echo apply_filters('the_content', $v_content); ?>
+                <div class="col-md-4">
+                    <?php if ($vision) { ?>
+                        <div class="ab-box">
+                            <h3><?php echo $v_title; ?></h3>
+                            <?php echo apply_filters('the_content', $v_content); ?>
+                        </div>
+                    <?php } ?>
                 </div>
-            <?php } ?>
-            <?php if ($certificate) { ?>
-                <div class="ab-box">
-                    <h3><?php echo $c_title; ?></h3>
-                    <?php echo apply_filters('the_content', $c_content); ?>
+                <div class="col-md-4">
+                    <?php if ($certificate) { ?>
+                        <div class="ab-box">
+                            <h3><?php echo $c_title; ?></h3>
+                            <?php echo apply_filters('the_content', $c_content); ?>
+                        </div>
+                    <?php } ?>
                 </div>
-            <?php } ?>
+            </div>
         </div>
     </section>
     <section class="testimonial bg-gray-pink pd60">

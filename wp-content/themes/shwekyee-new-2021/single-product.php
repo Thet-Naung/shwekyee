@@ -93,7 +93,7 @@
                 ?>
                     <div class="product-slide-box">
                         <!-- Swiper -->
-                        <div class="swiper-container product-slide">
+                        <div class="swiper-container product-single-slide">
                             <div class="swiper-wrapper">
                                 <?php foreach ( $products as $product ) { 
                                     $id = $product->ID;

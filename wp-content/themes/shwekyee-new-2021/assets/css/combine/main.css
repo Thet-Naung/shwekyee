@@ -317,6 +317,22 @@ div {
   border-radius: 10px;
   padding: 20px;
 }
+.breadcrumb .breadcrumb-box #breadcrumbs span {
+  color: #fff;
+}
+.breadcrumb .breadcrumb-box #breadcrumbs a i {
+  font-size: 25px;
+  color: #fff;
+  margin-right: 5px;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+.breadcrumb .breadcrumb-box #breadcrumbs a:hover i {
+  color: #759843;
+}
 .breadcrumb h1 {
   font-size: 50px;
   color: #fff;
@@ -374,7 +390,7 @@ header .top-bar ul li span.badge-default {
   border-radius: 30px;
   margin-left: 10px;
 }
-header .stellarnav ul {
+header .stellarnav >ul {
   text-align: right;
 }
 header .stellarnav ul li a {
@@ -398,6 +414,16 @@ header .stellarnav ul li.current_page_item a:after {
   width: 70%;
   height: 2px;
   background: #e39236;
+}
+header .stellarnav ul ul {
+  background: #e392362e;
+}
+header .stellarnav ul ul >li {
+  border-bottom: 1px solid #f8f9fa1c;
+  margin: 0 20px;
+}
+header .stellarnav ul ul >li:last-child {
+  border-bottom: 0;
 }
 .hm-service {
   background: url(/wp-content/uploads/2021/01/service-background.png) no-repeat;
@@ -614,11 +640,32 @@ header .stellarnav ul li.current_page_item a:after {
   color: #fff;
 }
 .ab-box {
+  text-align: center;
   margin-bottom: 30px;
+  color: #fff;
 }
-.ab-box ul li {
-  list-style-type: decimal;
-  margin-bottom: 15px;
+.ab-box h3 {
+  font-size: 27px;
+  margin-bottom: 20px;
+}
+.ab-box p {
+  color: #fff;
+}
+.ab-detail {
+  position: relative;
+}
+.about-img-box img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ab-content {
+  background: #f6efe7a8;
+  position: relative;
+  z-index: 1;
+  left: -100px;
+  padding: 30px;
 }
 .blog-detail {
   background: #fff;
@@ -946,6 +993,9 @@ footer .copyright-container .service-owner-logo {
 .product-detail .related-product .p-prev {
   left: auto;
   right: 50px;
+}
+.product-list .card {
+  border-bottom: 4px solid #e39236;
 }
 @media (max-width: 1199.98px) {
   header .stellarnav ul li a {

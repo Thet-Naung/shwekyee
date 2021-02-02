@@ -52,7 +52,8 @@
                     <div class="swiper-wrapper">
                         <?php foreach ($best_seller as $seller) {
                             $id = $seller->ID; 
-                            $s_image = get_the_post_thumbnail_url($id);    
+                            $s_images = get_the_post_thumbnail_url($id); 
+                            $s_image = aq_resize($s_images, 267, 253, true,true,true);   
                             $s_title = $seller->post_title;
                             $s_link = get_permalink($id);
                             $star = get_field('best_seller', $id);

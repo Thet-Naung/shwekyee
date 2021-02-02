@@ -138,6 +138,11 @@ $(document).ready(function() {
 	  });
 	var galleryTop = new Swiper('.gallery-top', {
 		spaceBetween: 10,
+		autoplay: 
+		{
+		delay: 2000,
+		},
+		loop: true,
 		navigation: {
 			nextEl: '.gallery-next',
 			prevEl: '.gallery-prev',
@@ -147,7 +152,7 @@ $(document).ready(function() {
 		}
 	});
 
-	var pslide = new Swiper('.product-slide', {
+	var pslide = new Swiper('.product-single-slide', {
 		slidesPerView: 4,
 		spaceBetween: 30,
 		navigation: {
@@ -171,6 +176,6 @@ $(document).ready(function() {
 	});
 	  
 
-	// AOS Animate
-	// AOS.init();
+	AOS Animate
+	AOS.init();
 });
