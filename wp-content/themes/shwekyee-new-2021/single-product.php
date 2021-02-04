@@ -5,6 +5,7 @@
     $id = $post->ID;
     $p_title = $post->post_title;
     $p_content = $post->post_content;
+    $p_feature_img = get_the_post_thumbnail_url($id);
     $p_field = get_fields($id);
     $p_price = $p_field['price'];
     $p_gallery = $p_field['gallery'];
@@ -14,7 +15,7 @@
     <div class="product-detail pd60">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-lg-8 col-12">
                     <?php if ( $p_gallery ) { ?>
                         <!-- Swiper -->
                         <div class="swiper-container gallery-top">
@@ -42,26 +43,35 @@
                                 <?php } ?>
                             </div>
                         </div>
+                    <?php }else { ?>
+                        <img src="<?php echo $p_feature_img; ?>" alt="<?php echo $p_title; ?>" class="w-100">
                     <?php } ?>
-                    <div class="p-detail-content">
+                    <div class="p-detail-content" data-aos="zoom-out-up" data-aos-easing="ease" data-aos-delay="600" data-aos-offset="0">
                         <?php echo apply_filters('the_content', $p_content); ?>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-lg-4 col-12">
+                <?php if ( $p_price ) { ?> 
                     <div class="product-fact">
-                        <section class="facts">
-                            <h2>Price: <?php echo $p_price; ?></h2>
-                        </section>
+                        <?php if ( $p_price ) { ?> 
+                            <section class="facts">   
+                                <h2 data-aos="zoom-out-left" data-aos-easing="ease" data-aos-delay="400" data-aos-offset="0">Price: <?php echo $p_price; ?></h2>
+                            </section>
+                        <?php } ?>
                         
                         <?php if ( $p_facts ) { 
+                            $sp = 3;
                             foreach ( $p_facts as $p_fact ) {
                         ?>
-                            <section class="facts">
-                                <h2><?php echo $p_fact['title']; ?></h2>
-                                <?php echo apply_filters('the_content', $p_fact['content']); ?>
+                            <section class="facts fact-mobile">
+                                <div data-aos="zoom-out-left" data-aos-easing="ease" data-aos-delay="<?php echo $sp*2; ?>00" data-aos-offset="0">
+                                    <h2><?php echo $p_fact['title']; ?></h2>
+                                    <?php echo apply_filters('the_content', $p_fact['content']); ?>
+                                </div>
                             </section>
-                        <?php } } ?>
+                        <?php $sp++; } } ?>
                     </div>
+                <?php } ?>
                 </div>
             </div>
             <div class="related-product">
@@ -91,7 +101,7 @@
                     $products = get_posts( $args );
                     if ( $products ) {
                 ?>
-                    <div class="product-slide-box">
+                    <div class="product-slide-box" data-aos="zoom-out" data-aos-easing="ease" data-aos-delay="800" data-aos-offset="0">
                         <!-- Swiper -->
                         <div class="swiper-container product-single-slide">
                             <div class="swiper-wrapper">

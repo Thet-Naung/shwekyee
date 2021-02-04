@@ -12,7 +12,9 @@
         ?>
         <?php if ($blogs) { ?>
             <ul>
-                <?php foreach ($blogs as $blog) { 
+                <?php 
+                $s = 1;
+                foreach ($blogs as $blog) { 
                     $id = $blog->ID;
                     $thumb = get_post_thumbnail_id($id);
                     $b_images = wp_get_attachment_image_url($thumb);
@@ -23,17 +25,17 @@
                 ?>
                     <li>
                         <div class="media d-flex align-items-center">
-                            <div class="s-image-box">
+                            <div class="s-image-box" data-aos="fade-right" data-aos-easing="ease" data-aos-delay="<?php echo $s*2 ?>00" data-aos-offset="0">
                                 <img src="<?php echo $b_image; ?>" alt="<?php echo $b_title; ?>">
                                 <div class="s-image-overlay"></div>
                             </div>
-                            <div class="media-body">
+                            <div class="media-body" data-aos="fade-left" data-aos-easing="ease" data-aos-delay="<?php echo $s*2 ?>00" data-aos-offset="0">
                                 <span><?php echo $b_date; ?></span>
                                 <p><a href="<?php echo $b_link; ?>" title="<?php echo $b_title; ?>"><?php echo $b_title; ?></a></p>
                             </div>
                         </div>
                     </li>
-                <?php } ?>
+                <?php $s++; } ?>
             </ul>
         <?php } ?>
     </div>
@@ -51,7 +53,9 @@
         ?>
         <?php if ($activities) { ?>
             <ul>
-                <?php foreach ($activities as $activity) { 
+                <?php 
+                $a = 3;
+                foreach ($activities as $activity) { 
                     $id = $activity->ID;
                     $thumb = get_post_thumbnail_id($id);
                     $a_images = wp_get_attachment_image_url($thumb);
@@ -62,11 +66,11 @@
                 ?>
                     <li>
                         <div class="media d-flex align-items-center">
-                            <div class="s-image-box">
+                            <div class="s-image-box" data-aos="fade-right" data-aos-easing="ease" data-aos-delay="<?php echo $a*2 ?>00" data-aos-offset="0">
                                 <img src="<?php echo $a_image; ?>" alt="<?php echo $a_title; ?>">
                                 <div class="s-image-overlay"></div>
                             </div>
-                            <div class="media-body">
+                            <div class="media-body" data-aos="fade-left" data-aos-easing="ease" data-aos-delay="<?php echo $a*2 ?>00" data-aos-offset="0">
                                 <span><?php echo $a_date; ?></span>
                                 <p><a href="<?php echo $a_link; ?>" title="<?php echo $a_title; ?>"><?php echo $a_title; ?></a></p>
                             </div>

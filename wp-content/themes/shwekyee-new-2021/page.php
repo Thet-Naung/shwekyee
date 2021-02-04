@@ -5,7 +5,7 @@
         <div class="bg-gray-pink pd60">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10 offset-md-1">
+                    <div class="col-lg-10 offset-lg-1">
                             <h2 class="primary-heading">Career Form</h2>
                         <?php if ($post->post_content) { ?>
                             <article class="main-article">
@@ -17,7 +17,38 @@
             </div>
         </div>
     </main>
-<?php }else { ?>
+<?php }
+elseif ( is_page(SK_ORDER_PAGE) ) { ?>
+<?php
+    $orders = get_field('order');
+?>
+    <main class="order-pg">
+        <div class="bg-gray-pink pd60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1">
+                        <?php if ($post->post_content) { ?>
+                            <article class="main-article" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="200" data-aos-offset="0">
+                                <?php echo apply_filters('the_content', $post->post_content); ?>
+                            </article>
+                        <?php } ?>
+                        <?php if ( $orders ) { ?>
+                            <?php 
+                                $o = 4;
+                                foreach ( $orders as $order ) { ?>
+                                <div class="order-box" data-aos="fade-out">
+                                    <?php echo apply_filters( 'the_content', $order['content'] ); ?>
+                                    <img src="<?php echo $order['image']; ?>" alt="Order Image">
+                                </div>
+                            <?php $o++; } ?>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main> 
+<?php }
+else { ?>
     <main class="default-pg">
         <div class="bg-gray-pink pd60">
             <div class="container">

@@ -11,30 +11,30 @@ $map = get_field('map','option');
         <div class="container">
             <section class="contact-info">
                 <div class="row">
-                    <div class="col-md-6">
-                        <h2>General Inquiry</h2>
-                        <div class="media">
+                    <div class="col-lg-6 col-12">
+                        <h2 data-aos="zoom-out-up" data-aos-easing="ease" data-aos-delay="200" data-aos-offset="0">General Inquiry</h2>
+                        <div class="media" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400" data-aos-offset="0">
                             <i class="fas fa-phone-square-alt"></i>
                             <div class="media-body">
                                 (95) <?php echo contact_link($general['contact_number'], 'tel:') ?>
                             </div>
                         </div>
-                        <div class="media">
+                        <div class="media" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="600" data-aos-offset="0">
                             <i class="fas fa-envelope"></i>
                             <div class="media-body">
                                 <?php echo contact_link($general['contact_email'], 'mailto:') ?>
                             </div>
                         </div>
-                        <h2>Our Location</h2>
-                        <div class="media">
+                        <h2 data-aos="zoom-out-up" data-aos-easing="ease" data-aos-delay="800" data-aos-offset="0">Our Location</h2>
+                        <div class="media" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="1000" data-aos-offset="0">
                             <i class="fas fa-map-marker-alt"></i>
                             <div class="media-body">
                                 <p><?php echo $general['contact_address']; ?></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <h2>Request Information</h2>
+                    <div class="col-lg-6 col-12">
+                        <h2 data-aos="zoom-out-up" data-aos-easing="ease" data-aos-delay="200" data-aos-offset="0">Request Information</h2>
                     </div>
                 </div>
             </section>

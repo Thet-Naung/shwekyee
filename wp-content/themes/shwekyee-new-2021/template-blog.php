@@ -19,7 +19,9 @@ get_header();
             ?>
             <?php if ($blogs) { ?>
                 <div class="row">
-                    <?php foreach ($blogs as $blog) {
+                    <?php 
+                    $b = 1;
+                    foreach ($blogs as $blog) {
                         $id = $blog->ID; 
                         $b_image = get_the_post_thumbnail_url($id);    
                         $b_title = $blog->post_title;
@@ -29,7 +31,7 @@ get_header();
                     ?>
                         <div class="col-lg-4 col-md-6 col-12 mb-4">
                             <a href="<?php echo $b_link; ?>" title="<?php echo $b_title; ?>">
-                                <div class="card">
+                                <div class="card h-100" data-aos="zoom-out-down" data-aos-easing="ease" data-aos-delay="<?php echo $b*2 ?>00" data-aos-offset="0">
                                     <div class="img-date">
                                         <img src="<?php echo $b_image; ?>" alt="<?php echo $b_title; ?>" class="w-100">
                                         <div class="b-date">
@@ -45,7 +47,7 @@ get_header();
                                 </div>
                             </a>
                         </div>
-                    <?php } ?>
+                    <?php $b++; } ?>
                 </div>
             <?php } ?>
         </div>

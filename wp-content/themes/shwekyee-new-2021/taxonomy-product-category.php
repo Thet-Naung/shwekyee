@@ -27,17 +27,18 @@
           $the_query = new WP_Query( $args );
           if ( $the_query->have_posts() ) {
               echo '<div class="mb-5">';
-              echo '<h3 class="primary-heading">'.$term->name.'</h3>'; 
-              echo '<div class="row">';
+              echo '<h3 class="primary-heading" data-aos="zoom-out-up" data-aos-easing="ease" data-aos-delay="400" data-aos-offset="0">'.$term->name.'</h3>'; 
+              echo '<div class="row d-flex justify-content-center">';
+              $p = 1;
               while ($the_query->have_posts()) { $the_query->the_post(); 
                 $id = $posts->ID; 
                 $p_image = get_the_post_thumbnail_url($id);    
                 $p_title = $post->post_title;
                 $p_link = get_permalink($id);
             ?>
-              <div class="col-md-3 col-sm-6 mb-4">
+              <div class="col-xl-3 col-md-4 col-sm-6 col-12 mb-4">
                 <a href="<?php echo $p_link; ?>" title="<?php echo $p_title; ?>">
-                    <div class="card h-100">
+                    <div class="card h-100" data-aos="zoom-out-down" data-aos-easing="ease" data-aos-delay="<?php echo $p*2 ?>00" data-aos-offset="0">
                         <img src="<?php echo $p_image; ?>" alt="<?php echo $p_title; ?>" class="w-100">
                         <div class="card-body">
                             <h4 class="slide-title text-center"><?php echo $p_title; ?></h4>
@@ -46,7 +47,7 @@
                 </a>
               </div>
             <?php
-              }
+              $p++; }
             echo '</div>';
             echo '</div>';
       } 

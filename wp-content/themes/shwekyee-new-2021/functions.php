@@ -18,6 +18,8 @@ define('SK_PT_TESTIMONIAL', 'testimonial');
 //define page
 define('SK_HOME_PAGE', 11);
 define('SK_CAREER_PAGE', 23);
+define('SK_BLOG_PAGE', 19);
+define('SK_ORDER_PAGE', 17);
 
 /*
 |-------------------------------------------------------------------------------------------------------------------------------

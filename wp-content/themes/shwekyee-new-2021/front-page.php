@@ -25,19 +25,23 @@
     <div class="container">
         <?php if ($service_gp) { ?>
             <div class="row">
-                <?php foreach ($service_gp as $service) { 
+                <?php 
+                $s = 1;
+                foreach ($service_gp as $service) { 
                     $s_image = $service['image'];
                     $s_title = $service['title'];
                     $s_content = $service['content'];    
                 ?>
                     <div class="col-md-4 col-12">
                         <div class="service-box">
-                            <img src="<?php echo $s_image; ?>" alt="<?php echo $s_title; ?>">
-                            <h3 class="inner-title"><?php echo $s_title; ?></h3>
-                            <?php echo apply_filters('the_content', $s_content); ?>
+                            <img src="<?php echo $s_image; ?>" alt="<?php echo $s_title; ?>" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="<?php echo $s*2; ?>00" data-aos-offset="0">
+                            <div data-aos="fade-down" data-aos-easing="ease" data-aos-delay="<?php echo $s*4; ?>00" data-aos-offset="0">
+                                <h3 class="inner-title"><?php echo $s_title; ?></h3>
+                                <?php echo apply_filters('the_content', $s_content); ?>
+                            </div>
                         </div>
                     </div>
-                <?php } ?>
+                <?php $s++; } ?>
             </div>
         <?php } ?>
     </div>
@@ -45,20 +49,21 @@
 <!-- best seller -->
 <section class="best-seller pd60 bg-gray-pink">
     <div class="container">
-        <?php if ($seller_title) { echo "<h2 class='primary-heading'>". $seller_title ."</h2>"; } ?>
+        <?php if ($seller_title) { echo "<h2 class='primary-heading' data-aos='fade-down' data-aos-easing='ease' data-aos-delay='700' data-aos-offset='0'>". $seller_title ."</h2>"; } ?>
         <?php if ($best_seller) { ?>
             <div class="seller">
                 <div class="swiper-container best-seller-slide">
                     <div class="swiper-wrapper">
-                        <?php foreach ($best_seller as $seller) {
+                        <?php 
+                        foreach ($best_seller as $seller) {
                             $id = $seller->ID; 
-                            $s_images = get_the_post_thumbnail_url($id); 
-                            $s_image = aq_resize($s_images, 267, 253, true,true,true);   
+                            $s_images = wp_get_attachment_image_src(get_post_thumbnail_id($id),'full');
+                            $s_image = aq_resize($s_images[0], 267, 253, true, true, true);   
                             $s_title = $seller->post_title;
                             $s_link = get_permalink($id);
                             $star = get_field('best_seller', $id);
                         ?>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" data-aos="zoom-in" data-aos-easing="ease" data-aos-delay="800" data-aos-offset="0">
                                 <a href="<?php echo $s_link; ?>" title="<?php echo $s_title; ?>">
                                     <div class="card h-100">
                                         <img src="<?php echo $s_image; ?>" alt="<?php echo $s_title; ?>">
@@ -77,8 +82,8 @@
                 <!-- Add Arrows -->
                 <div class="swiper-button-next seller-next"></div>
                 <div class="swiper-button-prev seller-prev"></div>
-                <div class="btn-space text-center">
-                    <a href="#" class="btn btn-1 hover-filled-slide-up"><span>View All</span></a>
+                <div class="btn-space text-center" data-aos="zoom-in-up">
+                    <a href="/product-type/product/" class="btn btn-1 hover-filled-slide-up"><span>View All</span></a>
                 </div>
             </div>  
         <?php } ?>
@@ -88,7 +93,7 @@
 <!-- premium product -->
 <section class="premium-product pd60">
     <div class="container">
-        <?php if ($product_title) { echo "<h2 class='secondary-heading'>". $product_title ."</h2>"; } ?>
+        <?php if ($product_title) { echo "<h2 class='secondary-heading' data-aos='fade-up' data-aos-easing='ease' data-aos-delay='400' data-aos-offset='0'>". $product_title ."</h2>"; } ?>
         <?php if ($products) { ?>
             <div class="product-box">
                 <div class="swiper-container product-slide">
@@ -99,7 +104,7 @@
                             $p_title = $product->post_title;
                             $p_link = get_permalink($id);
                         ?>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" data-aos="zoom-in-up" data-aos-easing="ease" data-aos-delay="500" data-aos-offset="0">
                                 <a href="<?php echo $p_link; ?>" title="<?php echo $p_title; ?>">
                                     <div class="card">
                                         <img src="<?php echo $p_image; ?>" alt="<?php echo $p_title; ?>" class="w-100">
@@ -115,8 +120,8 @@
                 <!-- Add Arrows -->
                 <div class="swiper-button-next product-next"></div>
                 <div class="swiper-button-prev product-prev"></div>
-                <div class="btn-space text-center">
-                    <a href="#" class="btn btn-1 hover-filled-slide-up"><span>View All</span></a>
+                <div class="btn-space text-center" data-aos="zoom-in-down" data-aos-easing="ease" data-aos-delay="600" data-aos-offset="0">
+                    <a href="/product-type/premium-product/" class="btn btn-1 hover-filled-slide-up"><span>View All</span></a>
                 </div>
             </div>
         <?php } ?>
@@ -126,7 +131,7 @@
 <!-- blog -->
 <section class="latest-blog pd60">
     <div class="container">
-        <?php if ($blog_title) { echo "<h2 class='primary-heading'>". $blog_title ."</h2>"; } ?>
+        <?php if ($blog_title) { echo "<h2 class='primary-heading' data-aos='zoom-in-right' data-aos-easing='ease' data-aos-delay='400' data-aos-offset='0'>". $blog_title ."</h2>"; } ?>
         <?php if ($blogs) { ?>
             <div class="blog-box">
                 <div class="swiper-container blog-slide">
@@ -139,7 +144,7 @@
                             $day = get_the_date('d', $id);
                             $month = get_the_date('M', $id);
                         ?>
-                            <div class="swiper-slide">
+                            <div class="swiper-slide" data-aos="zoom-out-up" data-aos-easing="ease" data-aos-delay="500" data-aos-offset="0">
                                 <a href="<?php echo $b_link; ?>" title="<?php echo $b_title; ?>">
                                     <div class="card">
                                         <div class="img-date">
@@ -163,8 +168,8 @@
                 <!-- Add Arrows -->
                 <div class="swiper-button-next blog-next"></div>
                 <div class="swiper-button-prev blog-prev"></div>
-                <div class="btn-space text-center">
-                    <a href="#" class="btn btn-1 hover-filled-slide-up"><span>View All</span></a>
+                <div class="btn-space text-center" data-aos="zoom-out-down" data-aos-easing="ease" data-aos-delay="600" data-aos-offset="0">
+                    <a href="<?php echo get_permalink(SK_BLOG_PAGE); ?>" class="btn btn-1 hover-filled-slide-up"><span>View All</span></a>
                 </div>
             </div>
         <?php } ?>
@@ -174,7 +179,7 @@
 <!-- Testimonial -->
 <section class="testimonial bg-gray-pink pd60">
     <div class="container">
-        <?php if ($client_title) { echo "<h2 class='primary-heading'>". $client_title ."</h2>"; } ?>
+        <?php if ($client_title) { echo "<h2 class='primary-heading'  data-aos='zoom-out-down' data-aos-easing='ease' data-aos-delay='400' data-aos-offset='0'>". $client_title ."</h2>"; } ?>
         <?php if ($clients) { ?>
             <div class="client-box">
                 <div class="swiper-container client-slide">
@@ -188,7 +193,7 @@
                             $c_content = $client->post_content;
                             $c_text = get_field('client', $id);
                         ?>
-                            <div class="swiper-slide h-100">
+                            <div class="swiper-slide h-100"  data-aos="zoom-out" data-aos-easing="ease" data-aos-delay="500" data-aos-offset="0">
                                 <a href="<?php echo $c_link; ?>" title="<?php echo $c_title; ?>">
                                     <div class="card">
                                         <img src="<?php echo $c_image; ?>" alt="<?php echo $c_title; ?>">
@@ -213,16 +218,16 @@
 
 <!-- youtube -->
 <section class="youtube-section pd60"> 
-    <?php if ($youtube_title) { echo "<h2 class='y-title mb-5'>". $youtube_title ."</h2>"; } ?>
-    <img src="/wp-content/uploads/2021/01/youtube-icon.png" alt="youtube icon">
-    <div class="mt-4">
+    <?php if ($youtube_title) { echo "<h2 class='y-title mb-5' data-aos='fade-up' data-aos-easing='ease' data-aos-delay='400' data-aos-offset='0'>". $youtube_title ."</h2>"; } ?>
+    <img src="/wp-content/uploads/2021/01/youtube-icon.png" alt="youtube icon" data-aos="zoom-out-up" data-aos-easing="ease" data-aos-delay="600" data-aos-offset="0">
+    <div class="mt-4" data-aos="zoom-out-down" data-aos-easing="ease" data-aos-delay="700" data-aos-offset="0">
         <a href="<?php echo $youtube_link; ?>" title="Youtube Link" target="_blank">Our Process (Opens Youtube)</a>
     </div>
 </section>
 
 <!-- facebook -->
 <section class="follow-facebook">
-    <a href="<?php echo $facebook; ?>" class="btn btn-fb" target="_blank">Follow Us @ facebook</a>
+    <a href="<?php echo $facebook; ?>" class="btn btn-fb" target="_blank" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="700" data-aos-offset="0">Follow Us @ facebook</a>
 </section>
 
 <?php get_footer(); ?>

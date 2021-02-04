@@ -4,6 +4,8 @@ get_header();
 
 $ab = get_fields();
 $ab_img = $ab['about_image'];
+$ab_mobile_img = $ab['mobile_image'];
+$ab_cake_img = $ab['cake_image'];
 $history = $ab['history_group'];
 $h_title = $history['title'];
 $h_content = $history['content'];
@@ -28,13 +30,18 @@ $c_content = $certificate['content'];
                     <h1 class="primary-heading"><?php echo $h_title; ?></h1>
                     <div class="ab-detail">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="about-img-box">
-                                <img src="<?php echo $ab_img; ?>" alt="Shwekyee About Image" class="w-100">
+                        <div class="col-xl-9 col-lg-8 col-12 offset-xl-3 offset-lg-4">
+                            <div class="about-img-box" data-aos="zoom-out" data-aos-easing="ease" data-aos-delay="200" data-aos-offset="0">
+                                <img src="<?php echo $ab_img; ?>" alt="Shwekyee About Image" class="w-100 d-lg-block d-none">
+                                <img src="<?php echo $ab_mobile_img; ?>" alt="Shwekyee About Image" class="w-100 d-lg-none d-block">
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="ab-content">
+                        
+                        <div class="ab-cake-img d-lg-block d-none">
+                            <img src="<?php echo $ab_cake_img; ?>" alt="Shwekyee Cake Image" data-aos="zoom-out-down" data-aos-easing="ease" data-aos-delay="200" data-aos-offset="0">
+                        </div>
+                        <div class="col-xl-7 col-lg-6 col-12 offset-xl-5 offset-lg-6">
+                            <div class="ab-content" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400" data-aos-offset="0">
                                 <?php echo apply_filters('the_content', $h_content); ?>
                             </div>
                         </div>
@@ -50,24 +57,30 @@ $c_content = $certificate['content'];
                 <div class="col-md-4">
                     <?php if ($mission) { ?>
                         <div class="ab-box">
-                            <h3><?php echo $m_title; ?></h3>
-                            <?php echo apply_filters('the_content', $m_content); ?>
+                            <h3 data-aos="fade-up" data-aos-easing="ease" data-aos-delay="600" data-aos-offset="0"><?php echo $m_title; ?></h3>
+                            <div data-aos="fade-up" data-aos-easing="ease" data-aos-delay="800" data-aos-offset="0">
+                                <?php echo apply_filters('the_content', $m_content); ?>
+                            </div>
                         </div>
                     <?php } ?>
                 </div>
                 <div class="col-md-4">
                     <?php if ($vision) { ?>
                         <div class="ab-box">
-                            <h3><?php echo $v_title; ?></h3>
-                            <?php echo apply_filters('the_content', $v_content); ?>
+                            <h3 data-aos="fade-up" data-aos-easing="ease" data-aos-delay="600" data-aos-offset="0"><?php echo $v_title; ?></h3>
+                            <div data-aos="fade-up" data-aos-easing="ease" data-aos-delay="800" data-aos-offset="0">    
+                                <?php echo apply_filters('the_content', $v_content); ?>
+                            </div>
                         </div>
                     <?php } ?>
                 </div>
                 <div class="col-md-4">
                     <?php if ($certificate) { ?>
                         <div class="ab-box">
-                            <h3><?php echo $c_title; ?></h3>
-                            <?php echo apply_filters('the_content', $c_content); ?>
+                            <h3 data-aos="fade-up" data-aos-easing="ease" data-aos-delay="600" data-aos-offset="0"><?php echo $c_title; ?></h3>
+                            <div data-aos="fade-up" data-aos-easing="ease" data-aos-delay="800" data-aos-offset="0">
+                                <?php echo apply_filters('the_content', $c_content); ?>
+                            </div>
                         </div>
                     <?php } ?>
                 </div>
@@ -76,7 +89,7 @@ $c_content = $certificate['content'];
     </section>
     <section class="testimonial bg-gray-pink pd60">
         <div class="container">
-            <h2 class="primary-heading">What Our Clients Say</h2>
+            <h2 class="primary-heading" data-aos="zoom-out-down">What Our Clients Say</h2>
             <?php 
                 $args = array(
                     'post_type'   => 'testimonials',
@@ -99,7 +112,7 @@ $c_content = $certificate['content'];
                                 $c_content = $client->post_content;
                                 $c_text = get_field('client', $id);
                             ?>
-                                <div class="swiper-slide h-100">
+                                <div class="swiper-slide h-100"  data-aos='zoom-out'>
                                     <a href="<?php echo $c_link; ?>" title="<?php echo $c_title; ?>">
                                         <div class="card">
                                             <img src="<?php echo $c_image; ?>" alt="<?php echo $c_title; ?>">

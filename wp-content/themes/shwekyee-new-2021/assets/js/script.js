@@ -6,12 +6,11 @@
 
 $(document).ready(function() {  
 
-	// Mobile responsive nav
+	//Mobile responsive nav
 	$('.stellarnav').stellarNav({
 		theme: 'plain',
 		menuLabel: '',
 		breakpoint: 992,
-		position: 'right',
 		openingSpeed: 250,
 		closingSpeed: 250,
 	});
@@ -23,6 +22,7 @@ $(document).ready(function() {
 		spaceBetween: 20,
 		slidesPerColumnFill: 'row',
 		direction: 'horizontal',
+		loop: true,
 		navigation: {
 			nextEl: '.seller-next',
 			prevEl: '.seller-prev',
@@ -56,6 +56,7 @@ $(document).ready(function() {
 		slidesPerView: 3,
 		slidesPerGroup: 3,
 		spaceBetween: 20,
+		loop: true,
 		navigation: {
 			nextEl: '.product-next',
 			prevEl: '.product-prev',
@@ -83,6 +84,7 @@ $(document).ready(function() {
 		slidesPerView: 3,
 		slidesPerGroup: 3,
 		spaceBetween: 20,
+		loop: true,
 		navigation: {
 			nextEl: '.blog-next',
 			prevEl: '.blog-prev',
@@ -111,6 +113,7 @@ $(document).ready(function() {
 		slidesPerColumn: 1,
 		slidesPerGroup: 2,
 		spaceBetween: 20,
+		loop: true,
 		navigation: {
 			nextEl: '.client-next',
 			prevEl: '.client-prev',
@@ -153,12 +156,29 @@ $(document).ready(function() {
 	});
 
 	var pslide = new Swiper('.product-single-slide', {
-		slidesPerView: 4,
+		slidesPerView: 3,
 		spaceBetween: 30,
 		navigation: {
 			nextEl: '.p-next',
 			prevEl: '.p-prev',
 		},
+		breakpoints: {
+			991: {
+				slidesPerView: 3,
+				slidesPerGroup: 3,
+                spaceBetween: 30
+            },
+			575: {
+				slidesPerView: 2,
+				slidesPerGroup: 2,
+                spaceBetween: 30
+			},
+			200: {
+				slidesPerView: 1,
+				slidesPerGroup: 1,
+                spaceBetween: 30
+            }
+        }
 	});
 
 
@@ -176,6 +196,6 @@ $(document).ready(function() {
 	});
 	  
 
-	AOS Animate
+	//AOS Animate
 	AOS.init();
 });

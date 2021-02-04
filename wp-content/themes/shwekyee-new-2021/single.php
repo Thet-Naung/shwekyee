@@ -19,14 +19,14 @@
                                         <!-- <div class="fb-share-button" data-href="https://www.facebook.com/shwekyeemyanmar/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fshwekyeemyanmar%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">မျှဝေမယ်</a></div> -->
                                     </div>
                                     <div class="img-date">
-                                        <img src="<?php echo $blog_image; ?>" alt="<?php echo $blog_title; ?>" class="w-100"> 
-                                        <div class="b-date">
+                                        <img src="<?php echo $blog_image; ?>" alt="<?php echo $blog_title; ?>" class="w-100" data-aos="zoom-out" data-aos-easing="ease" data-aos-delay="200" data-aos-offset="0"> 
+                                        <div class="b-date" data-aos="fade-up" data-aos-easing="ease" data-aos-delay="400" data-aos-offset="0">
                                             <span class="day"><?php echo $day; ?>
                                                 <span class="month"><?php echo $month; ?></span>
                                             </span>
                                         </div>
-                                    </div>
-                                <div class="blog-content">
+                                    </div> 
+                                <div class="blog-content" data-aos="fade-in" data-aos-easing="ease" data-aos-delay="800" data-aos-offset="0">
                                     <?php echo apply_filters('the_content', $blog_content); ?>
                                 </div>
                                 </div>
