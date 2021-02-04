@@ -49,7 +49,7 @@ if ($site_info['logo']) {
                                 <span>Hours: Open:</span><span class="badge badge-default"><?php echo $site_info['open_hour']; ?></span>
                             </li>
                             <li class="hotline">
-                                <span>Hot Line: <?php echo $site_info['hotline_number']; ?></span>
+                                <a href="tel:<?php echo $site_info['hotline_number']; ?>"><span>Hot Line: <?php echo $site_info['hotline_number']; ?></span></a>
                             </li>
                         </ul>
                     </div>
